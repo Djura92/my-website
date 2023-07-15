@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1px;
+}
+#fName{
+  margin-bottom: 4px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#lName{
+  margin-bottom: 4px;
+  border-radius: 0px;
+}
+#eMail{
+  margin-bottom: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.btn_home {
+  margin-top: 4px;
+}
+/* ****************************** */
+.border-dashed { --bs-border-style: dashed; }
