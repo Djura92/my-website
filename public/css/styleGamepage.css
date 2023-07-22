@@ -1,0 +1,65 @@
+@import "https://unpkg.com/open-props/open-props.min.css";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+body{
+  background-color: #333;
+}
+ul, img {
+  animation: 3s scale-up both ease-in;
+}
+img {
+  /* border: solid red; */
+}
+ul {
+  --big-tile-size: 25vmin;
+  --scale: 0.4;
+  --rotation: 90deg;
+  --tile-size: calc(var(--big-tile-size) / 3);
+  list-style-type: none;
+  padding: 20px;
+  /* margin: 10px; */
+  display: grid;
+  gap: 0.5vmin;
+  grid-template: repeat(9, var(--tile-size)) / repeat(9, var(--tile-size));
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+}
+@keyframes scale-up {
+  0% {
+    transform: translate(-50%, -50%) scale(var(--scale)) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(var(--rotation));
+  }
+}
+img {
+  --rotation: 270deg;
+  --scale: 1;
+  /* height: 150%;
+  min-width: 150%; */
+  height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+li{
+  padding: 0;
+  position: relative;
+  background: #333;
+  max-inline-size: 100%;
+
+}
+li{
+  grid-column: var(--x1, auto) / var(--x2, auto);
+  grid-row: var(--y1, auto) / var(--y2, auto);
+}
+
+li {
+  border-radius: 25px;
+  overflow: hidden;
+}

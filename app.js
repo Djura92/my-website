@@ -1,4 +1,5 @@
 //jshint esversion: 6
+'use strict'
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
@@ -9,15 +10,30 @@ const app = express();
 
 require('dotenv').config();
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname+ '/home.html')
+  res.sendFile(__dirname + '/home.html')
+});
+app.get('/piggame', function(req, res){
+  res.sendFile(__dirname + '/public/PigGame/index.html')
+});
+app.get('/ballscatch', function (req, res){
+  res.sendFile(__dirname + '/public/BallsCatch/index.html');
+});
+app.get('/drumkit', function(req,res){
+  res.sendFile(__dirname + '/public/DrumKit/index.html')
+});
+app.get('/guess', function(req, res){
+  res.sendFile(__dirname + '/public/GuessMyNumber/guessMyNumber.html')
+});
+app.get('/gamespage', function(req,res){
+  res.sendFile(__dirname + '/gamespage.html')
 });
 app.get('/singup', function(req,res){
-  res.sendFile(__dirname + '/singup.html')
+  res.sendFile(__dirname + '/public/SingUp/singup.html')
 });
 app.get('/home', function(req, res){
   res.sendFile(__dirname + '/home.html')
@@ -55,9 +71,9 @@ app.post('/', function(req, res){
           // console.log(log);
           console.log(log.error_count);
           if (log.error_count > 0) {
-            res.sendFile(__dirname + '/failure.html');
+            res.sendFile(__dirname + '/public/SingUp/failure.html');
           }else {
-            res.sendFile(__dirname + '/success.html');
+            res.sendFile(__dirname + '/public/SingUp/success.html');
           }
       })
     }

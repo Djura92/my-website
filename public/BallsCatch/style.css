@@ -1,0 +1,18 @@
+body{
+    background-color: #333;
+    margin: 10px auto;
+    text-align: center;
+}
+.back {
+    line-height: 12px;
+
+    font-size: 2rem;
+    font-family: tahoma;
+    width: auto;
+    height: 38px;
+    margin-top: 15px;
+    margin-right: 5px;
+    position: absolute;
+    top:0;
+    right:0;
+}
