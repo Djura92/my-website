@@ -17,6 +17,12 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/home.html')
 });
+app.get('/projects', function(req, res){
+  res.sendFile(__dirname + '/projectspage.html')
+});
+app.get('/tindog', function(req, res){
+  res.sendFile(__dirname + '/public/TinDogPage/index.html');
+});
 app.get('/piggame', function(req, res){
   res.sendFile(__dirname + '/public/PigGame/index.html')
 });
